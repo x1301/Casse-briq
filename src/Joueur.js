@@ -2,20 +2,31 @@ class Joueur {
     get score() {
         return this._score;
     }
+    get vie() {
+        return this._vie;
+    }
+
+    set vie(value) {
+        this._vie = value;
+        this.$vie.textContent=  this._vie
+    }
 
     set score(value) {
         this._score = value;
         this.$score.textContent=  this._score
     }
 
-    constructor(Tableau1,name,scoreID){
+    constructor(Tableau1,scoreID){
         let me = this
         this.Tablo= Tableau1
 
+        this._vie = 3;
         this._score = 0;
-        this.name = name;
         this.scoreId = scoreID;
 
+        this.$el = document.getElementById(scoreID);
+        this.$score = this.$el.querySelector('.score')
+        this.$vie = this.$el.querySelector('.vie')
 
         this.player=this.Tablo.physics.add.sprite(gameConfig.width/2,700,'carre')
         this.player.setDisplaySize(200,20)
@@ -33,6 +44,7 @@ class Joueur {
         this.Tablo.ballT.ballC.setVelocityX(this.Tablo.ballT.ballC.body.velocity.x+this.coeff*5)
     }
 
+
     gauche(){
         this.player.setVelocityX(-800)
     }
@@ -42,6 +54,7 @@ class Joueur {
     pasbouger(){
         this.player.setVelocityX(0)
     }
+
     bord(){
         if(this.player.x<=120){
             this.player.x=120
