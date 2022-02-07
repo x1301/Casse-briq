@@ -29,7 +29,7 @@ class Tableau1 extends Phaser.Scene {
                 this.refresh()
             }
             if(this.player.score==57){
-                alert('Gagné !')
+                alert('Gg !')
                 this.refresh()
             }
             if(this.ballT.state==0){
