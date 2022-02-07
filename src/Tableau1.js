@@ -28,7 +28,7 @@ class Tableau1 extends Phaser.Scene {
                 alert("Perdue  !")
                 this.refresh()
             }
-            if(this.player.score==54){
+            if(this.player.score==57){
                 alert('Gagné !')
                 this.refresh()
             }
