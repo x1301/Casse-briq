@@ -1,4 +1,12 @@
 class Joueur {
+    get vie() {
+        return this._vie;
+    }
+
+    set vie(value) {
+        this._vie = value;
+        this.$vie.textContent=  this.vie
+    }
     get score() {
         return this._score;
     }
@@ -8,14 +16,17 @@ class Joueur {
         this.$score.textContent=  this._score
     }
 
-    constructor(Tableau1,name,scoreID){
+    constructor(Tableau1,scoreID){
         let me = this
         this.Tablo= Tableau1
 
         this._score = 0;
-        this.name = name;
+        this._vie = 3;
         this.scoreeId = scoreID;
 
+        this.$el = document.getElementById(scoreID);
+        this.$score = this.$el.querySelector(".score")
+        this.$vie = this.$el.querySelector(".vie")
 
         this.player=this.Tablo.physics.add.sprite(gameConfig.width/2,700,'carre')
         this.player.setDisplaySize(200,20)

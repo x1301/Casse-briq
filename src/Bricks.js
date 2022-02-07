@@ -32,8 +32,15 @@ class Bricks {
     {
         this.renvoie(brique)
         brique.destroy()
+        if(brique==this.briqueV){
+            this.scene.player.vie+=1
+        }
+        if(brique==this.briqueR){
+            this.scene.player.score+=10
+        }
     }
     renvoie(brique){
+        this.scene.win()
         this.randoo=this.scene.ballT.ballC.y
         this.coeff=this.randoo/5
         this.coeff=this.coeff*1.5
