@@ -14,7 +14,7 @@ class Joueur {
 
         this._score = 0;
         this.name = name;
-        this.scoreId = scoreID;
+        this.scoreeId = scoreID;
 
 
         this.player=this.Tablo.physics.add.sprite(gameConfig.width/2,700,'carre')

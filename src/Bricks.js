@@ -34,8 +34,8 @@ class Bricks {
         brique.destroy()
     }
     renvoie(brique){
-        this.rando=this.scene.ballT.ballC.y
-        this.coeff=this.rando/5
+        this.randoo=this.scene.ballT.ballC.y
+        this.coeff=this.randoo/5
         this.coeff=this.coeff*1.5
         this.scene.ballT.ballC.setVelocityY(this.scene.ballT.ballC.body.velocity.y+this.coeff*5)
     }
